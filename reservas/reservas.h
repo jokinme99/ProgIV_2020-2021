@@ -22,6 +22,10 @@ typedef struct{
 
 	int hora;
 
-}reservas;
+}reserva;
+
+reserva realizarReserva(int idReserva, int idHotel,char tipoHabitacion,float precio,int dia,int hora);
+
+void eliminarReserva(reserva);
 
 #endif /* RESERVAS_RESERVAS_H_ */

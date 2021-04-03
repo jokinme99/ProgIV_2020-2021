@@ -22,16 +22,16 @@ typedef struct{
 
 	char correo[];
 
-	char edad[];
+	int edad;
 
 }usuario;
 
 void registrarUsuario(char usuario[], char contrasenya[],char nombre[], char apellidos[],char correo[],char edad[]);
 
-void modificarDatos();
+void modificarDatos(usuario);
 
-void eliminarPerfil();
+void eliminarPerfil(usuario);
 
-
+usuario devolverUsuario(char* usuario);
 
 #endif /* USUARIOS_USUARIOS_H_ */
