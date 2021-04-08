@@ -14,17 +14,17 @@ typedef struct{
 
 	int idHotel;
 
-	char tipoHabitacion[];
+	char tipoHabitacion[10];
 
 	float precio;
 
-	int dia;
-
-	int hora;
-
+	int dias;
 }reserva;
 
-reserva realizarReserva(int idReserva, int idHotel,char tipoHabitacion,float precio,int dia,int hora);
+void realizarReserva( int idHotel,char tipoHabitacion,float precio,int dia);
+
+
+
 
 void eliminarReserva(reserva);
 

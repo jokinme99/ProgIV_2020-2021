@@ -6,6 +6,10 @@
  */
 #include<stdio.h>
 #include "usuarios/usuarios.h"
+#include "hoteles/hoteles.h"
+
+
+
 
 int main(void)
 {
@@ -28,8 +32,8 @@ int main(void)
 
 		printf("Has seleccionado iniciar sesión. Por favor introduzca el nombre de usuario y contraseña\n");
 		fflush(stdout);
-		char usuario[];
-		char contra[];
+		char usuario[10];
+		char contra[10];
 		do{
 			printf("introduce el nombre de usuario\n");
 			fflush(stdout);
@@ -50,35 +54,35 @@ int main(void)
 	case 2:/*Registrarse*/
 		printf("Has seleccionado registrarse por favor introduzca los datos de usuario correspondientes\n");
 		fflush(stdout);
-		char usuario[];
+		char usuarioR[10];
 		do{
 			printf("introduce el nombre de usuario\n");
 			fflush(stdout);
-			scanf("%s", usuario);
-			if (devolverUsuario(usuario) != NULL) {
+			scanf("%s", usuarioR);
+			if (devolverUsuario(usuarioR) != NULL) {
 				printf("Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
 
 		}
-		}while(devolverUsuario(usuario) == NULL);
+		}while(devolverUsuario(usuarioR) == NULL);
 		printf("introduce la contraseña\n");
 		fflush(stdout);
-		char contra[];
-		scanf("%s", contra);
+		char contraR[10];
+		scanf("%s", contraR);
 		printf("introduce nombre\n");
 		fflush(stdout);
-		char nombre[];
+		char nombre[10];
 		scanf("%s", nombre);
 		printf("introduce apellido\n");
 		fflush(stdout);
-		char apellido[];
+		char apellido[20];
 		scanf("%s", apellido);
 		printf("introduce correo\n");
 		fflush(stdout);
-		char correo[];
+		char correo[20];
 		scanf("%s", correo);
 		printf("introduce edad\n");
 		fflush(stdout);
-		char edad;
+		int edad;
 		scanf("%i", edad);
 	    break;
 	case 3:/*Salir*/
@@ -113,7 +117,26 @@ switch (choice)
 case 1:/* Añadir usuario*/
 	//HABRA QUE CREAR UNA CARPETA NUEVA LLAMADA MENUS/INTERFACES PARA GUARDAR TODOS ESTOS PROCESOS
 	printf("Procediendo al menu de reservas\n");
+	printf("Elige el hotel");
+	//Leer los hoteles que encontraremos en la bbdd y sacarlos por pantalla;
+	char habitacion[10];
+	printf("Elige el tipo de habitación--> pequeña, mediana, grande");
+	scanf("%s", habitacion);
+	if(habitacion == "pequeña" || habitacion == "mediana" || habitacion == "grande"){
+		printf("Seleccione una de las anteriores");
+		scanf("%s", habitacion);
+	}else
+
+
+	printf("Introduzca el numero de dias");
+	int dias;
+	scanf("%i", dias);
+
 	fflush(stdout);
+	// Habria que hacer una funcion que calcule el precio, segun las estrellas del hotel, el tipo de habiatcion y los dias)
+
+	realizarReserva(20, habitacion, 150, dias);
+
     break;
 case 2:/*Search Movie*/
 	//HABRA QUE CREAR UN MENU MANUAL CON CADA UNA DE LAS RESERVAS PROXIMAS COMO POSIBLES OPCIONES

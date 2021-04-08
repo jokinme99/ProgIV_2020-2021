@@ -12,21 +12,21 @@ typedef struct{
 
 	int idUsuadio;
 
-	char usuario[];
+	char usuario[10];
 
-	char contrasenya[];
+	char contrasenya[10];
 
-	char nombre[];
+	char nombre[10];
 
-	char apellidos[];
+	char apellidos[20];
 
-	char correo[];
+	char correo[20];
 
 	int edad;
 
 }usuario;
 
-void registrarUsuario(char usuario[], char contrasenya[],char nombre[], char apellidos[],char correo[],char edad[]);
+void registrarUsuario(char usuario[], char contrasenya[],char nombre[], char apellidos[],char correo[], int edad);
 
 void modificarDatos(usuario);
 

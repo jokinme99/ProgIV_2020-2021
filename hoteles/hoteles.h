@@ -1,4 +1,4 @@
-/*
+	/*
  * hoteles.h
  *
  *  Created on: 3 abr. 2021
@@ -12,9 +12,11 @@ typedef struct{
 
 	int idHotel;
 
-	char nombreHotel[];
+	char nombreHotel[20];
 
-	char ubicacionHotel[];
+	char ubicacionHotel[10];
+
+	int estrellas;
 
 }hotel;
 
