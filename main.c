@@ -5,8 +5,11 @@
  *      Author: Suhar
  */
 #include<stdio.h>
-#include "usuarios/usuarios.h"
-#include "hoteles/hoteles.h"
+
+#include "hotel/hotel.h"
+#include "usuario/usuario.h"
+#include "reserva/reserva.h"
+#include "habitacion/habitacion.h"
 
 
 
@@ -68,14 +71,6 @@ int main(void)
 		fflush(stdout);
 		char contraR[10];
 		scanf("%s", contraR);
-		printf("introduce nombre\n");
-		fflush(stdout);
-		char nombre[10];
-		scanf("%s", nombre);
-		printf("introduce apellido\n");
-		fflush(stdout);
-		char apellido[20];
-		scanf("%s", apellido);
 		printf("introduce correo\n");
 		fflush(stdout);
 		char correo[20];
