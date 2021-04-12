@@ -5,7 +5,7 @@ FILE *ficheroReservas;
 
 void realizarReserva(int idHotel, char tipoHabitacion, float precio, int dias) {
 
-	//Realiar el idReserva con el numero de reserva que es
+	//Realizar el idReserva con el numero de reserva que es
 
 	ficheroReservas = fopen("Reservas.txt", "r");
 

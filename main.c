@@ -1,9 +1,3 @@
-/*
- * main.c
- *
- *  Created on: 24 mar. 2021
- *      Author: Suhar
- */
 #include<stdio.h>
 
 #include "hotel/hotel.h"

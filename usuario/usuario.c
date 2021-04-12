@@ -6,7 +6,7 @@ FILE *ficheroUsuarios;
 void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],
 		int edad) {
 
-	//Realiar el idReserva con el numero de reserva que es
+	//Realizar el idReserva con el numero de reserva que es
 
 	ficheroUsuarios = fopen("Usuarios.txt", "r");
 
