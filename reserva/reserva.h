@@ -1,14 +1,7 @@
-/*
- * reservas.h
- *
- *  Created on: 24 mar. 2021
- *      Author: Suhar
- */
-
 #ifndef RESERVA_RESERVA_H_
 #define RESERVA_RESERVA_H_
 
-typedef struct{
+typedef struct {
 
 	int idReserva;
 
@@ -19,12 +12,9 @@ typedef struct{
 	float precio;
 
 	int dias;
-}reserva;
+} reserva;
 
-void realizarReserva( int idHotel,char tipoHabitacion,float precio,int dia);
-
-
-
+void realizarReserva(int idHotel, char tipoHabitacion, float precio, int dia);
 
 void eliminarReserva(reserva);
 

@@ -1,14 +1,7 @@
-	/*
- * hoteles.h
- *
- *  Created on: 3 abr. 2021
- *      Author: Suhar
- */
-
 #ifndef HOTEL_HOTEL_H_
 #define HOTEL_HOTEL_H_
 
-typedef struct{
+typedef struct {
 
 	int idHotel;
 
@@ -22,6 +15,8 @@ typedef struct{
 
 	int num_habitaciones_disponibles;
 
-}Hotel;
-void imprimirHotel( Hotel h);
+} Hotel;
+
+void imprimirHotel(Hotel h);
+
 #endif /* HOTEL_HOTEL_H_ */

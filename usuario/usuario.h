@@ -1,14 +1,7 @@
-/*
- * usuarios.h
- *
- *  Created on: 24 mar. 2021
- *      Author: Suhar
- */
-
 #ifndef USUARIO_USUARIO_H_
 #define USUARIO_USUARIO_H_
 
-typedef struct{
+typedef struct {
 
 	int idUsuario;
 
@@ -20,14 +13,15 @@ typedef struct{
 
 	int edad;
 
-}usuario;
+} usuario;
 
-void registrarUsuario(char nombreUsuario[], char contrasenya[],char correo[], int edad);
+void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],
+		int edad);
 
 void modificarDatos(usuario);
 
 void eliminarPerfil(usuario);
 
-usuario devolverUsuario(char* usuario);
+usuario devolverUsuario(char *usuario);
 
 #endif /* USUARIO_USUARIO_H_ */
