@@ -7,7 +7,7 @@
 
 #ifndef HABITACION_HABITACION_H_
 #define HABITACION_HABITACION_H_
-typedef struct{
+typedef struct {
 	int idHabitacion;
 
 	int numeroHabitacion;
@@ -17,7 +17,7 @@ typedef struct{
 	char tipoHabitacion[];
 
 	float precioHabitacion;
-}habitacion;
+} habitacion;
 void imprimirHabitacion(habitacion h);
 
 #endif /* HABITACION_HABITACION_H_ */
