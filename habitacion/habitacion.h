@@ -8,7 +8,7 @@ typedef struct {
 
 	int plantaHabitacion;
 
-	char tipoHabitacion[];
+	char tipoHabitacion[30];
 
 	float precioHabitacion;
 } habitacion;

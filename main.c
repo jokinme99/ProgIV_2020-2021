@@ -1,11 +1,14 @@
 #include<stdio.h>
-
+#include <string.h>
 #include "hotel/hotel.h"
 #include "usuario/usuario.h"
 #include "reserva/reserva.h"
 #include "habitacion/habitacion.h"
 
-int main(void) {
+void menu();
+void inicio();
+
+void menu(){
 	int eleccion;
 	do {
 		fflush(stdin);
@@ -24,7 +27,6 @@ int main(void) {
 			fflush(stdout);
 			char usuario[10];
 			char contra[10];
-			do {
 				printf("introduce el nombre de usuario\n");
 				fflush(stdout);
 				scanf("%s", usuario);
@@ -33,14 +35,23 @@ int main(void) {
 
 				scanf("%s", contra);
 
-				if (devolverUsuario(usuario) == NULL
-						|| devolverUsuario(usuario).contrasenya != contra) {
-					printf(
-							"Ese nombre de usuário no existe o la contraseña no es valida, por favor, vuelva a intentarlo\n");
+//				if ((strcmp(usuario,usuarioDefecto)!=0)//0 si cadenas son iguales
+//						|| devolverUsuario(usuario).contrasenya != contra) {
+//					printf(
+//							"Ese nombre de usuário no existe o la contraseña no es valida, por favor, vuelva a intentarlo\n");
+//
+//				}
 
+				if((strcmp(usuario,'usuario')==0)||strcmp(contra,'usuario')==0){
+					printf("Bienvenido de nuevo UsuarioPorDefecto");
+					inicio();
+				}else if((strcmp(usuario, 'usuario')==0)|| strcmp(contra,'usuario')!=0){
+					printf("Has introducido mal la contrasenya");
+					menu();
+				}else{
+					printf("Este usuario no existe");
+					menu();
 				}
-			} while (devolverUsuario(usuario) == NULL
-					|| devolverUsuario(usuario).contrasenya != contra);
 
 			break;
 		case 2:/*Registrarse*/
@@ -48,16 +59,16 @@ int main(void) {
 					"Has seleccionado registrarse por favor introduzca los datos de usuario correspondientes\n");
 			fflush(stdout);
 			char usuarioR[10];
-			do {
+
 				printf("introduce el nombre de usuario\n");
 				fflush(stdout);
 				scanf("%s", usuarioR);
-				if (devolverUsuario(usuarioR) != NULL) {
+				//if (devolverUsuario(usuarioR) != NULL)
+				if(strcmp(usuarioR, 'usuario')==0){
 					printf(
 							"Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
 
 				}
-			} while (devolverUsuario(usuarioR) == NULL);
 			printf("introduce la contraseña\n");
 			fflush(stdout);
 			char contraR[10];
@@ -82,8 +93,9 @@ int main(void) {
 		}
 
 	} while (eleccion != 3);
-
+}
 	int choice;
+	void inicio(){
 	do {
 		fflush(stdin);
 		printf("Bienvenidos a los Hoteles deusto\n\n");
@@ -101,10 +113,10 @@ int main(void) {
 			printf("Elige el hotel");
 			//Leer los hoteles que encontraremos en la bbdd y sacarlos por pantalla;
 			char habitacion[10];
-			printf("Elige el tipo de habitación--> pequeña, mediana, grande");
+			printf("Elige el tipo de habitación--> pequenya, mediana, grande");
 			scanf("%s", habitacion);
-			if (habitacion == "pequeña" || habitacion == "mediana"
-					|| habitacion == "grande") {
+			if (strcmp(habitacion, 'pequenya')==0 || strcmp(habitacion, 'mediana')==0
+					|| strcmp(habitacion, 'grande')==0) {
 				printf("Seleccione una de las anteriores");
 				scanf("%s", habitacion);
 			} else
@@ -128,6 +140,7 @@ int main(void) {
 			//UTILIZAR FICHEROS PARA GUARDAR LAS RESERVAS DE CADA UNO
 			printf(
 					"Estas son las reservas que has realizado en nuestra aplicación");
+
 			fflush(stdout);
 			break;
 		case 4:
@@ -141,6 +154,8 @@ int main(void) {
 		}
 
 	} while (choice != 4);
-
-	return 0;
 }
+int main(){
+	menu();
+}
+

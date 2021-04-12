@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "reserva.h"
+#include "reserva/reserva.h"
 
 FILE *ficheroReservas;
 
