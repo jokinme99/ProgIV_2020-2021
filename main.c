@@ -58,17 +58,17 @@ void menu(){
 			printf(
 					"Has seleccionado registrarse por favor introduzca los datos de usuario correspondientes\n");
 			fflush(stdout);
-			char usuarioR[10];
+			char usuarioR[15];
 
 				printf("introduce el nombre de usuario\n");
 				fflush(stdout);
+
 				scanf("%s", usuarioR);
 				//if (devolverUsuario(usuarioR) != NULL)
-				if(strcmp(usuarioR, 'usuario')==0){
-					printf(
-							"Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
+				//if(strcmp(usuarioR, 'usuario')==0){
+					//printf("Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
 
-				}
+				//2}
 			printf("introduce la contraseña\n");
 			fflush(stdout);
 			char contraR[10];
@@ -81,7 +81,10 @@ void menu(){
 			fflush(stdout);
 			int edad;
 			scanf("%i", edad);
+			registrarUsuario(usuarioR, contraR, correo, edad);
 			break;
+
+
 		case 3:/*Salir*/
 			printf("goodbye");
 			fflush(stdout);

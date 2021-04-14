@@ -3,8 +3,7 @@
 
 FILE *ficheroUsuarios;
 
-void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],
-		int edad) {
+void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],	int edad) {
 
 	//Realizar el idReserva con el numero de reserva que es
 
@@ -25,7 +24,7 @@ void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],
 	ficheroUsuarios = fopen("Usuarios.txt", "a");
 
 	fprintf(ficheroUsuarios,
-			"NombreUsuario:%c;contrasenya:%c;correo:%d;Hora:%d;\n",
+			"NombreUsuario:%s;contrasenya:%s;correo:%s;Edad:%i;\n",
 			nombreUsuario, contrasenya, correo, edad);
 
 	fclose(ficheroUsuarios);
