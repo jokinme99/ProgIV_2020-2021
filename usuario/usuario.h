@@ -1,6 +1,9 @@
 #ifndef USUARIO_USUARIO_H_
 #define USUARIO_USUARIO_H_
 
+#include <stdbool.h>
+#include <stdio.h>
+
 typedef struct {
 
 	int idUsuario;
@@ -22,6 +25,6 @@ void modificarDatos(usuario);
 
 void eliminarPerfil(usuario);
 
-usuario devolverUsuario(char *usuario);
+bool devolverUsuario(char *usuario);
 
 #endif /* USUARIO_USUARIO_H_ */
