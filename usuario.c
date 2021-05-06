@@ -59,26 +59,17 @@ bool devolverUsuario(char *usuario) {
 
 	while (fgets(c, sizeof(c), f)) {
 
-		printf("%s\n", c);
-
 		ptr = strtok(c, ";");
-		printf("%s\n", ptr);
 
 		ptr = strtok(ptr, ":");
-		printf("%s\n", ptr);
 
 		while (ptr != NULL) {
 
 			ptr = strtok(NULL, ":");
 
-			printf("%s\n", ptr);
-
 			if (ptr != NULL) {
 
 				nombres[i] = ptr;
-				printf("valor i %i\n", i);
-				printf("Antes de cerrar el fichero %s\n", nombres[i]);
-				printf("El usuario %s\n", usuario);
 
 				if (strcmp(nombres[i], usuario) == 0) {
 
