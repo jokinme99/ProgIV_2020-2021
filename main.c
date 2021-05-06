@@ -9,87 +9,12 @@
 void menu();
 void inicio();
 
-void leerFichero(char *fichero, char *usuario) {
-
-	FILE *f;
-
-	f = fopen(fichero, "r");
-
-	int counter = 0;
-	char linea;
-
-	for (linea = getc(f); linea != EOF; linea = getc(f))
-		if (linea == '\n') // Increment count if this character is newline
-			counter = counter + 1;
-
-	fclose(f);
-
-	f = fopen(fichero, "r");
-
-	char *ptr;
-	char c[256];
-
-	int i = 0;
-	char **nombres;
-
-	nombres = (char**) malloc(counter * sizeof(char*));
-
-	while (fgets(c, sizeof(c), f)) {
-
-		printf("%s\n", c);
-
-		ptr = strtok(c, ";");
-		printf("%s\n", ptr);
-
-		ptr = strtok(ptr, ":");
-		printf("%s\n", ptr);
-
-		while (ptr != NULL) {
-
-			ptr = strtok(NULL, ":");
-
-			printf("%s\n", ptr);
-
-			if (ptr != NULL) {
-
-				nombres[i] = ptr;
-				printf("valor i %i\n", i);
-				printf("Antes de cerrar el fichero %s\n", nombres[i]);
-				printf("El usuario %s\n", usuario);
-
-			}
-
-		}
-		i++;
-	}
-
-	int j ;
-		for ( j = 0; j < counter; ++j) {
-
-			if (strcmp(nombres[j], usuario) == 0) {
-
-				printf("Este usuario ya existe\n");
-
-			} else {
-
-				printf("Valor de j %i\n", j);
-				printf("EL usuario %s \n", nombres[j]);
-				printf("Este usuario esta disponible\n");
-
-			}
-		}
-
-
-	fclose(f);
-
-}
 
 void menu() {
 	int eleccion;
 	do {
 		fflush(stdin);
 		printf("Hola\n\n");
-		leerFichero("Usuarios.txt", "marcos");
 		printf("1. Iniciar sesion\n");
 		printf("2. Registrarse\n");
 		printf("3. Exit\n");
@@ -143,7 +68,7 @@ void menu() {
 			fflush(stdout);
 
 			scanf("%s", usuarioR);
-			if (devolverUsuario(usuarioR) == false) {
+			if (devolverUsuario(usuarioR)) {
 
 				//if(strcmp(usuarioR, 'usuario')==0){
 				//printf("Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
@@ -163,8 +88,6 @@ void menu() {
 				scanf("%i", &edad);
 				registrarUsuario(usuarioR, contraR, correo, edad);
 
-			} else {
-				menu();
 			}
 			break;
 

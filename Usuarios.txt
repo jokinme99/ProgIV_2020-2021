@@ -1,2 +1,3 @@
 NombreUsuario:marcos;contrasenya:marcos;correo:marcos;Edad:12;
 NombreUsuario:juango;contrasenya:memememe;correo:memememem;Edad:42;
+NombreUsuario:julio;contrasenya:contra;correo:orreo;Edad:23;

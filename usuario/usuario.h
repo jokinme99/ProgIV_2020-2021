@@ -23,7 +23,7 @@ void registrarUsuario(char nombreUsuario[], char contrasenya[], char correo[],
 
 void modificarDatos(usuario);
 
-void eliminarPerfil(usuario);
+void eliminarPerfil(char *nombreUsuario);
 
 bool devolverUsuario(char *usuario);
 
