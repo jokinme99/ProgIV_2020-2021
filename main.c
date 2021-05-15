@@ -1,13 +1,16 @@
 #include<stdio.h>
-#include <string.h>
 #include "hotel/hotel.h"
 #include "usuario/usuario.h"
 #include "reserva/reserva.h"
 #include "habitacion/habitacion.h"
 #include <string.h>
+#include <stdlib.h>
+
+
 
 void menu();
 void inicio();
+
 
 
 void menu() {
@@ -23,39 +26,35 @@ void menu() {
 
 		switch (eleccion) {
 		case 1:/* Iniciar sesion */
-
+			system("clear");
 			printf(
 					"Has seleccionado iniciar sesión. Por favor introduzca el nombre de usuario y contraseña\n");
 			fflush(stdout);
-			char usuario[10];
-			char contra[10];
+			char *usuario[16];
+			char *contra[16];
 			printf("introduce el nombre de usuario\n");
 			fflush(stdout);
-			scanf("%s", usuario);
+			scanf("%s", &usuario);
 			printf("introduce la contraseña\n");
 			fflush(stdout);
 
-			scanf("%s", contra);
+			scanf("%s", &contra);
 
-//				if ((strcmp(usuario,usuarioDefecto)!=0)//0 si cadenas son iguales
-//						|| devolverUsuario(usuario).contrasenya != contra) {
-//					printf(
-//							"Ese nombre de usuário no existe o la contraseña no es valida, por favor, vuelva a intentarlo\n");
-//
-//				}
+			printf("%s\n", usuario);
+			printf("%s\n", contra);
 
-			if ((strcmp(usuario, 'usuario')==0)
-					|| strcmp(contra, 'usuario')==0) {
-				printf("Bienvenido de nuevo UsuarioPorDefecto");
-				inicio();
-			} else if ((strcmp(usuario, 'usuario')==0)
-					|| strcmp(contra, 'usuario')!=0) {
-				printf("Has introducido mal la contrasenya");
-				menu();
-			} else {
-				printf("Este usuario no existe");
-				menu();
-			}
+		if (comprobarUsuario(&usuario, &contra) == true){
+
+			system("clear");
+			fflush(stdout);
+			inicio();
+
+		}else{
+			fflush(stdout);
+			menu();
+
+		}
+
 
 			break;
 		case 2:/*Registrarse*/
