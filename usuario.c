@@ -95,10 +95,7 @@ bool devolverUsuario(char *usuario) {
 		i++;
 
 	}
-	int contador = 0;
-	while (contador < counter) {
-		free(nombres[contador]);
-	}
+
 
 	return true;
 

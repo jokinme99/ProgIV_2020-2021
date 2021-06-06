@@ -73,6 +73,7 @@ void menu() {
 				//printf("Ese nombre de usuário ya existe, por favor introduzca uno valido\n");
 
 				//2}
+
 				printf("introduce la contraseña\n");
 				fflush(stdout);
 				char contraR[10];
