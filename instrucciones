@@ -1,3 +1,13 @@
 Github: progIV_2020-2021
 Exe: cmd g++ a.cpp sqlite3.dll
 bd: sqliteAdmin
+
+El programa te mete a un registro de usuario con 4 opciones:
+
+1. registrar un usuario
+2. registrar un administrador
+3. iniciar el programa de c++ para iniciar sesión
+4. salir
+
+El programa genera un fichero con los datos de todos los usuarios registrados en la carpeta 
+del proyecto de c++ con el nombre "Usuarios.txt"
