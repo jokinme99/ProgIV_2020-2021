@@ -17,7 +17,7 @@ void menu() {
 	  d = opendir("../progIV_Cplus");
 	  if (d) {
 	    while ((dir = readdir(d)) != NULL) {
-	      printf("%s\n", dir->d_name);
+	      //printf("%s\n", dir->d_name);
 	    }
 	    closedir(d);
 	  }
